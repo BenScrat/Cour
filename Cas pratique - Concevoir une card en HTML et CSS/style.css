@@ -1,10 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;1,300&display=swap");
+
+:root {
+  --text: #efe9e2;
+  --fond: #2e4d43;
+  --fond-2: #67ab95;
+  --text-btn: #0077cc;
+  --fond-btn: #ffffff;
+}
+
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
-  background-color: #ccd5ff;
+  background-color: var(--fond);
   font-family: "Work Sans", sans-serif;
 }
 main {
@@ -13,15 +22,19 @@ main {
   margin: 3rem 1rem;
 }
 h1 {
+  color: var(--text);
   font-size: 2.5rem;
 }
 h2 {
   font-size: 1rem;
   text-transform: uppercase;
-  color: #4e64c8;
+  color: var(--text);
+}
+p {
+  color: var(--text);
 }
 .card-container {
-  background: #e4e9feda;
+  background: var(--fond-2);
   border-radius: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -42,12 +55,13 @@ h2 {
   font-weight: 400;
 }
 .designer-quote {
+  color: var(--text);
   font-style: italic;
   font-size: 1.35rem;
 }
 .card-button {
-  background-color: #1030bc;
-  color: #e4ebff;
+  background-color: var(--text-btn);
+  color: var(--fond-btn);
   border-radius: 0.75rem;
   border-style: none;
   padding: 0.5rem 1rem;
@@ -55,25 +69,49 @@ h2 {
   font-size: 1.35rem;
 }
 .card-button:hover {
-  background-color: #3b5df6;
-  color: #e4ebff;
+  background-color: var(--fond-btn);
+  color: var(--text-btn);
 }
 .button-container {
   display: flex;
   justify-content: flex-end;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-  h1 {
-    font-size: 1.15rem;
-  }
+/* ===== MEDIA QUERIES ===== */
+
+/* 📱 Mobile (moins de 600px) */
+@media screen and (max-width: 600px) {
   .card-container {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    padding: 15px;
   }
-  .designer-quote {
-    font-size: 0.9rem;
+
+  .card-img {
     width: 100%;
-    margin: 1rem 0;
+    max-width: 300px;
+  }
+
+  .designer-description p {
+    font-size: 14px;
+  }
+
+  .card-button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* 📱 Tablettes (600px à 1024px) */
+@media screen and (max-width: 1024px) {
+  .card-container {
+    width: 85%;
+  }
+
+  .designer-description p {
+    font-size: 16px;
+  }
+
+  .card-button {
+    padding: 12px 18px;
   }
 }
